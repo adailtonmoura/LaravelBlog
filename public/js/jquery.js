@@ -10977,7 +10977,7 @@ return jQuery;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! d:\workspace\blog\node_modules\jquery\dist\jquery.js */"./node_modules/jquery/dist/jquery.js");
+module.exports = __webpack_require__(/*! D:\workspace\blog\node_modules\jquery\dist\jquery.js */"./node_modules/jquery/dist/jquery.js");
 
 
 /***/ })

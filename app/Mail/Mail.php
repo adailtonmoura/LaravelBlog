@@ -28,7 +28,7 @@ class Mail extends Mailable
      */
     public function build()
     {
-        $this->to('adailtonmouradasilvasantos@gmail.com');
+        $this->to('jhonatamns@outlook.com');
         $this->subject('asd');
         return $this->markdown('email')->attachFromStorage("$this->path");
     }
