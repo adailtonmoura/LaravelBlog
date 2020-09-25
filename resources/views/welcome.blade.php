@@ -18,6 +18,8 @@
 <body class="antialiased">
 
     <div class="container mt-5">
+   
+
         @if (session('status'))
             <div class="alert alert-success">
                 {{ session('status') }}
@@ -35,12 +37,23 @@
                 <div class="form-group">
                     <label for="">Nome</label>
                     <input type="text" class="form-control" name="name" id="name">
+                    @error('name')                    
+                        <div class="alert alert-danger">
+                            {{ $message }}
+                        </div>                    
+                    @enderror
                 </div>
+               
 
                 {{-- Content --}}
                 <div class="form-group">
                     <label for="">Conteudo</label>
                     <textarea class="form-control" name="content" id="content" rows="3"></textarea>
+                    @error('content')                    
+                        <div class="alert alert-danger">
+                            {{ $message }}
+                        </div>                    
+                    @enderror
                 </div>
 
                 {{-- Attachments --}}
