@@ -23,5 +23,5 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::post('/send',[MailController::class,'teste'])->name('send');
+Route::post('/send',[MailController::class,'sendMail'])->name('send');
 

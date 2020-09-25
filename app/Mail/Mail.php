@@ -9,15 +9,15 @@ use Illuminate\Queue\SerializesModels;
 class Mail extends Mailable
 {
     use Queueable, SerializesModels;
-    private $path;
+    private $paths = array();
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($path)
+    public function __construct($paths)
     {
-        $this->path = $path;
+        $this->paths = $paths;
     }
 
     /**
@@ -27,8 +27,12 @@ class Mail extends Mailable
      */
     public function build()
     {
-        $this->to('jhonatamns@outlook.com');
+        $this->to('adailton.silva091@academico.ifs.edu.br');
         $this->subject('asd');
-        return $this->markdown('email')->attachFromStorage("$this->path");
+        $email = $this->markdown('email');
+
+        foreach ($this->paths as $files) {
+            $email->attachFromStorage("$files");
+        }
     }
 }
