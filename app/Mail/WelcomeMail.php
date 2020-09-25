@@ -3,21 +3,22 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class Mail extends Mailable
+class WelcomeMail extends Mailable
 {
     use Queueable, SerializesModels;
-    private $path;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($path)
+    public function __construct()
     {
-        $this->path = $path;
+        //
     }
 
     /**
@@ -27,8 +28,6 @@ class Mail extends Mailable
      */
     public function build()
     {
-        $this->to('jhonatamns@outlook.com');
-        $this->subject('asd');
-        return $this->markdown('email')->attachFromStorage("$this->path");
+        return $this->markdown('emails.WelcomeMail');
     }
 }

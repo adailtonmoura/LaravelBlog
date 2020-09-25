@@ -18,14 +18,14 @@
 <body class="antialiased">
 
     <div class="container_mt-5">
-        @if (session('status'))
-            <div class="alert alert-success">
-                {{ session('status') }}
-            </div>
-        @endif
 
         <div class="email">
             <h1>ENVIAR EMAIL</h1>
+            @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+            @endif
             <form action="{{route('send')}}" method="post" enctype="multipart/form-data">
                 @csrf
 
