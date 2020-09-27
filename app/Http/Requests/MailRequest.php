@@ -24,7 +24,7 @@ class MailRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
+            'mailsubject' => 'required',
             'content' => 'required',
             // 'file' => 'required',
         ];
@@ -32,7 +32,7 @@ class MailRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'Por favor informe o seu nome',
+            'mailsubject.required' => 'Por favor informe o assunto',
             'content.required' => 'Por favor informe o conteúdo',
             // 'file.required' => 'Por favor anexe os arquivos',
         ];

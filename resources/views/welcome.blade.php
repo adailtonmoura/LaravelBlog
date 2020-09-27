@@ -35,9 +35,9 @@
 
 
                 <div class="form-group">
-                    <label for="">Nome</label>
-                    <input type="text" class="form-control" name="name" id="name">
-                    @error('name')                    
+                    <label for="">Assunto</label>
+                    <input type="text" class="form-control" name="mailsubject" id="mailsubject">
+                    @error('mailsubject')                    
                         <div class="alert alert-danger">
                             {{ $message }}
                         </div>                    
@@ -60,10 +60,11 @@
                 <div class="form-group">
                     <label for="file">Arquivos</label>
                     <input type="file" class="form-control-file" name="files[]" id="file" multiple>
+                    <small id="help" class="form-text text-muted">Por favor, envie arquivos compactados.</small>
                 </div>
 
-                <button type="submit" name="button" id="button" class="btn btn-primary" btn-lg btn-block">Enviar  <i class="fas fa-paper-plane"></i> </button>
-
+                <button type="submit" name="button" id="button" class="btn btn-primary">Enviar  <i class="fas fa-paper-plane"></i> </button>
+                
             </form>
 
             </div>

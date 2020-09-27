@@ -13,15 +13,20 @@ use Illuminate\Support\Facades\Mail as FacadesMail;
 class JobMail implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-
+    
+    private $paths = array();
+    private $mailsubject;
+    private $content;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($paths, $mailsubject, $content)
     {
-        //
+        $this->paths = $paths;
+        $this->mailsubject = $mailsubject;
+        $this->content = $content;
     }
 
     /**
@@ -31,6 +36,6 @@ class JobMail implements ShouldQueue
      */
     public function handle()
     {
-        FacadesMail::send(new Mail($this->senderemail,$this->content));
+        FacadesMail::send(new Mail($this->paths, $this->mailsubject, $this->content));
     }
 }
