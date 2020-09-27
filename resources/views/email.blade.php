@@ -1,1 +1,3 @@
-<h1>Enviado com sucesso, tudo pronto</h1>
+<body class="main">
+    <div></div>
+</body>
