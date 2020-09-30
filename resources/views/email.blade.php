@@ -1,1 +1,7 @@
-<h1>Enviado com sucesso, tudo pronto</h1>
+@component('mail::message')
+    {{$data[0]['subject']}}
+@component('mail::subcopy')
+    {{$data[0]['content']}}
+@endcomponent
+
+@endcomponent

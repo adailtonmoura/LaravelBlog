@@ -33,9 +33,12 @@ class Mail extends Mailable
     public function build()
     {
         $this->to('adailton.silva091@academico.ifs.edu.br');
-        $this->subject($this->mailsubject);
-
-        $email = $this->markdown('email');
+        $this->subject("$this->mailsubject");
+        $data = array([
+            'content' => $this->content,
+            'subject' => $this->mailsubject
+        ]);
+        $email = $this->markdown('email',['data' => $data]);
 
         foreach ($this->paths as $files) {
             $email->attachFromStorage("$files");
