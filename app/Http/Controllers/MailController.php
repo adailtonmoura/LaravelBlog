@@ -15,7 +15,6 @@ class MailController extends Controller
 
         for ($i = 0; $i < count($request->allFiles()['files']); $i++) {
             $file = $request->allFiles()['files'][$i];
-
             $paths[$i] = $file->store('files');
         }
 

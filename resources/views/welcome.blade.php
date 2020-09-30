@@ -17,6 +17,9 @@
 
 <body class="antialiased">
 
+<<<<<<< HEAD
+    <div class="container_mt-5">
+=======
     <div class="container mt-5">
    
 
@@ -25,9 +28,15 @@
                 {{ session('status') }}
             </div>
         @endif
+>>>>>>> 53470d71af5cf140030b14f0c7904ac1e8972fcf
 
         <div class="email">
             <h1>ENVIAR EMAIL</h1>
+            @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+            @endif
             <form action="{{route('send')}}" method="post" enctype="multipart/form-data">
                 @csrf
 
